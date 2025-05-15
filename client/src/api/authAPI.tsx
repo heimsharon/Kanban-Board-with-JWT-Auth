@@ -7,7 +7,6 @@ const login = async (userInfo: UserLogin):
   Promise<LoginResponse> => {
 
   try {
-
     const response = await fetch(`${BASE_URL}/auth/login`, {
       method: 'POST',
       headers: {
@@ -17,7 +16,6 @@ const login = async (userInfo: UserLogin):
     });
 
     if (!response.ok) {
-
       const errorData = await response.json();
       throw new Error(`Error: ${errorData.message}`);
     }

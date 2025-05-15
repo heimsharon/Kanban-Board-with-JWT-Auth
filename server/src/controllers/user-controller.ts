@@ -2,11 +2,16 @@ import { Request, Response } from 'express';
 import { User } from '../models/user.js';
 
 // GET /Users
-export const getAllUsers = async (_req: Request, res: Response) => {
+export const getAllUsers = async (
+  _req: Request,
+  res: Response
+) => {
+
   try {
     const users = await User.findAll({
       attributes: { exclude: ['password'] }
     });
+
     res.json(users);
   } catch (error: any) {
     res.status(500).json({ message: error.message });
@@ -14,12 +19,17 @@ export const getAllUsers = async (_req: Request, res: Response) => {
 };
 
 // GET /Users/:id
-export const getUserById = async (req: Request, res: Response) => {
+export const getUserById = async (
+  req: Request,
+  res: Response
+) => {
   const { id } = req.params;
+
   try {
     const user = await User.findByPk(id, {
       attributes: { exclude: ['password'] }
     });
+
     if (user) {
       res.json(user);
     } else {
@@ -31,8 +41,12 @@ export const getUserById = async (req: Request, res: Response) => {
 };
 
 // POST /Users
-export const createUser = async (req: Request, res: Response) => {
+export const createUser = async (
+  req: Request,
+  res: Response
+) => {
   const { username, password } = req.body;
+
   try {
     const newUser = await User.create({ username, password });
     res.status(201).json(newUser);
@@ -42,9 +56,13 @@ export const createUser = async (req: Request, res: Response) => {
 };
 
 // PUT /Users/:id
-export const updateUser = async (req: Request, res: Response) => {
+export const updateUser = async (
+  req: Request,
+  res: Response
+) => {
   const { id } = req.params;
   const { username, password } = req.body;
+
   try {
     const user = await User.findByPk(id);
     if (user) {
@@ -61,8 +79,12 @@ export const updateUser = async (req: Request, res: Response) => {
 };
 
 // DELETE /Users/:id
-export const deleteUser = async (req: Request, res: Response) => {
+export const deleteUser = async (
+  req: Request,
+  res: Response
+) => {
   const { id } = req.params;
+
   try {
     const user = await User.findByPk(id);
     if (user) {

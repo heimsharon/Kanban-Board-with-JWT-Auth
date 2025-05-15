@@ -37,7 +37,7 @@ const Login = () => {
           value={loginData.username || ''}
           onChange={handleChange}
         />
-      <label>Password</label>
+        <label>Password</label>
         <input
           type='password'
           name='password'

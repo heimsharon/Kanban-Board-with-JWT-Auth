@@ -15,7 +15,7 @@ const retrieveTickets = async () => {
     );
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error('invalid API response, check network tab!');
     }
 
@@ -40,7 +40,7 @@ const retrieveTicket = async (id: number | null): Promise<TicketData> => {
 
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error('Could not invalid API response, check network tab!');
     }
     return data;
@@ -54,18 +54,18 @@ const createTicket = async (body: TicketData) => {
   try {
     const response = await fetch(
       '/api/tickets/', {
-        method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${Auth.getToken()}`
-          },
-        body: JSON.stringify(body)
-      }
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${Auth.getToken()}`
+      },
+      body: JSON.stringify(body)
+    }
 
     )
     const data = response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error('invalid API response, check network tab!');
     }
 
@@ -81,17 +81,17 @@ const updateTicket = async (ticketId: number, body: TicketData): Promise<TicketD
   try {
     const response = await fetch(
       `/api/tickets/${ticketId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${Auth.getToken()}`
-        },
-        body: JSON.stringify(body)
-      }
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${Auth.getToken()}`
+      },
+      body: JSON.stringify(body)
+    }
     )
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error('invalid API response, check network tab!');
     }
 
@@ -106,16 +106,16 @@ const deleteTicket = async (ticketId: number): Promise<ApiMessage> => {
   try {
     const response = await fetch(
       `/api/tickets/${ticketId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${Auth.getToken()}`
-        }
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${Auth.getToken()}`
       }
+    }
     )
     const data = await response.json();
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error('invalid API response, check network tab!');
     }
 
@@ -127,4 +127,4 @@ const deleteTicket = async (ticketId: number): Promise<ApiMessage> => {
 };
 
 
-export { createTicket, deleteTicket, retrieveTickets, retrieveTicket, updateTicket};
+export { createTicket, deleteTicket, retrieveTickets, retrieveTicket, updateTicket };

@@ -1,3 +1,8 @@
+/* FilePath: client/src/styles/index.css */
+
+/* ===========================
+  Global Styles
+=========================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -13,31 +18,21 @@
 }
 
 /* webkit solution */
-::-webkit-input-placeholder { 
-  text-align:right; 
+::-webkit-input-placeholder {
+  text-align: right;
 }
 
 /* mozilla solution */
-input:-moz-placeholder { 
-  text-align:right; 
-}
-
-a {
-  font-weight: 500;
-  color: #000000;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+input:-moz-placeholder {
+  text-align: right;
 }
 
 body {
-  background: #ECF0F1;
+  background: #98b6d7;
   background-size: cover;
-  background-repeat: no-repeat no-repeat;
+  background-repeat: no-repeat;
   background-position: center center;
   margin: 0;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -47,6 +42,19 @@ h1 {
   line-height: 1.1;
 }
 
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #ead70c;
+}
+
+/* ===========================
+        Buttons
+=========================== */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -54,37 +62,69 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #f606d2;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-main {
-  color: black;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-}
-
-tr {
-  border-radius: 10px;
-  background-color: #000;
+#logout-button {
+  background-color: #f606d2;
   color: white;
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #333333;
+#logout-button:hover {
+  background-color: #ff4d4d;
+  color: #fff;
 }
 
-/* Navbar Content */
+.editBtn {
+  background-color: #18e1b2;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  font-weight: 700;
+  color: black;
+  text-decoration: inherit;
+}
+
+.editBtn:hover {
+  color: #eaee0e;
+}
+
+.deleteBtn {
+  background-color: #e67e7ede;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  font-weight: 700;
+  color: black;
+  text-decoration: inherit;
+}
+
+.deleteBtn:hover {
+  color: #fff706;
+}
+
+/* ===========================
+  Navbar
+=========================== */
 .nav {
   display: flex;
   padding: 1em 2em;
@@ -105,7 +145,13 @@ tbody tr:nth-child(odd) {
 }
 
 .nav-title a {
-  color: #b864c4;
+  color: #047747;
+  font-size: 4rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+.nav-title a:hover {
+  color: #043077;
 }
 
 .nav-item {
@@ -123,11 +169,9 @@ tbody tr:nth-child(odd) {
   font-weight: 700;
 }
 
-.table {
-  width: 80vw;
-  table-layout: fixed;
-}
-
+/* ===========================
+  Board and Tickets
+=========================== */
 .board {
   width: 100%;
 }
@@ -140,14 +184,14 @@ tbody tr:nth-child(odd) {
   text-align: center;
   font-weight: 500;
   width: 33%;
-  height: 90vh; 
+  height: 90vh;
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin: 5px;
   padding: 5px;
 }
 
 .todo {
-  background-color: #e9cbec;
+  background-color: #e1bae4;
 }
 
 .inprogress {
@@ -155,12 +199,12 @@ tbody tr:nth-child(odd) {
 }
 
 .done {
-  background-color: #732381;
+  background-color: #9c12b5;
 }
 
 .ticket-card {
   text-align: left;
-  background-color: #fff;
+  background-color: #c7c3c3;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 4px;
@@ -168,73 +212,88 @@ tbody tr:nth-child(odd) {
   border: 0.1em solid black;
 }
 
-.container {
-  /* margin: auto; */
-  width: 100%;
-  /* height: 90%; */
+.table {
+  width: 80vw;
+  table-layout: fixed;
 }
 
-#create-ticket-link {
-  display: block;
-  margin-left: auto;
+tr {
+  border-radius: 10px;
+  background-color: #000;
+  color: white;
 }
 
+tbody tr:nth-child(odd) {
+  background-color: #333333;
+}
 
+/* ===========================
+  Forms
+=========================== */
 .form {
   width: 60%;
-  height: 80%;
+  height: 90%;
   background-color: #b864c4;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.form > h1, .form > label {
+.form>h1,
+.form>label {
   color: yellow;
+  text-align: center;
 }
 
-.form > input {
+.form>input {
   width: 200px;
-  
+  height: 25px;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.form > label {
+.form>label {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .form button {
   margin-top: 2.5%;
+  background-color: rgb(14, 203, 140);
 }
 
 .form textarea {
   resize: both;
-  min-height: 30px;
-  min-width: 30px;
+  min-height: 100px;
+  min-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.editBtn {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  cursor: pointer;
-  transition: border-color 0.25s;
+/* ===========================
+  Dropdowns
+=========================== */
+select {
+  width: 200px;
+  height: 40px;
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-.deleteBtn {
-  background-color: #f9f9f9;
-  font-weight: 500;
-  color: black;
-  text-decoration: inherit;
-}
-
-.deleteBtn:hover {
-  color: #535bf2;
-}
-
+/* ===========================
+  Miscellaneous
+=========================== */
 .login-notice {
   display: flex;
   width: 100%;
@@ -242,15 +301,47 @@ tbody tr:nth-child(odd) {
   justify-content: center;
 }
 
+#create-ticket-link {
+  display: block;
+  margin-left: auto;
+  background-color: rgb(6, 209, 209);
+}
+
+.container {
+  width: 100%;
+}
+
+.home-page {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===========================
+  Error Messages
+=========================== */
+.error-message {
+  color: red;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

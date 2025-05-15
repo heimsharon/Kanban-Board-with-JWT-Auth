@@ -26,7 +26,7 @@ const Swimlane = ({ title, tickets, deleteTicket }: SwimlaneProps) => {
     <div className={`swimlane ${getStatusClass(title)}`}>
       <h2>{title}</h2>
       {tickets.map(ticket => (
-        <TicketCard 
+        <TicketCard
           key={ticket.id}
           ticket={ticket}
           deleteTicket={deleteTicket}

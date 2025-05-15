@@ -7,7 +7,7 @@ export const login = async (
   req: Request,
   res: Response
 ) => {
-    const { username, password } = req.body;
+  const { username, password } = req.body;
 
   try {
 

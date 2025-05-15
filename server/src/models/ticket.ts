@@ -9,7 +9,7 @@ interface TicketAttributes {
   assignedUserId?: number;
 }
 
-interface TicketCreationAttributes extends Optional<TicketAttributes, 'id'> {}
+interface TicketCreationAttributes extends Optional<TicketAttributes,'id'> { }
 
 export class Ticket extends Model<TicketAttributes, TicketCreationAttributes> implements TicketAttributes {
   public id!: number;

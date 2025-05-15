@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-
 import App from './App.tsx';
 import Board from './pages/Board.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Board />
-      }, 
+      },
       {
         path: '/edit',
         element: <EditTicket />
