@@ -36,7 +36,7 @@ const CreateTicket = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (newTicket){
+    if (newTicket) {
       const data = await createTicket(newTicket);
       console.log(data);
       navigate('/');
@@ -62,18 +62,18 @@ const CreateTicket = () => {
     <>
       <div className='container'>
         <form className='form' onSubmit=
-        {handleSubmit}>
+          {handleSubmit}>
           <h1>Create Ticket</h1>
           <label htmlFor='tName'>Ticket Name</label>
-          <textarea 
+          <textarea
             id='tName'
             name='name'
             value={newTicket?.name || ''}
             onChange={handleTextAreaChange}
-            />
+          />
           <label htmlFor='tStatus'>Ticket Status</label>
-          <select 
-            name='status' 
+          <select
+            name='status'
             id='tStatus'
             value={newTicket?.status || ''}
             onChange={handleTextChange}
@@ -83,7 +83,7 @@ const CreateTicket = () => {
             <option value='Done'>Done</option>
           </select>
           <label htmlFor='tDescription'>Ticket Description</label>
-          <textarea 
+          <textarea
             id='tDescription'
             name='description'
             value={newTicket?.description || ''}
@@ -102,14 +102,14 @@ const CreateTicket = () => {
                 </option>
               )
             }) : (
-            <textarea 
-              id='tUserId'
-              name='assignedUserId'
-              value={newTicket?.assignedUserId || 0}
-              onChange={handleTextAreaChange}
-            />
+              <textarea
+                id='tUserId'
+                name='assignedUserId'
+                value={newTicket?.assignedUserId || 0}
+                onChange={handleTextAreaChange}
+              />
             )
-          }
+            }
           </select>
           <button type='submit' onSubmit={handleSubmit}>Submit Form</button>
         </form>

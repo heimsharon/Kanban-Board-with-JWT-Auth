@@ -1,5 +1,4 @@
 import { useState, FormEvent, ChangeEvent } from "react";
-
 import Auth from '../utils/auth';
 import { login } from "../api/authAPI";
 
@@ -32,14 +31,14 @@ const Login = () => {
       <form className='form' onSubmit={handleSubmit}>
         <h1>Login</h1>
         <label >Username</label>
-        <input 
+        <input
           type='text'
           name='username'
           value={loginData.username || ''}
           onChange={handleChange}
         />
       <label>Password</label>
-        <input 
+        <input
           type='password'
           name='password'
           value={loginData.password || ''}
@@ -48,7 +47,7 @@ const Login = () => {
         <button type='submit'>Submit Form</button>
       </form>
     </div>
-    
+
   )
 };
 

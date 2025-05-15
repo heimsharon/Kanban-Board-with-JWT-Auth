@@ -1,6 +1,5 @@
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
 import { retrieveTicket, updateTicket } from '../api/ticketAPI';
 import { TicketData } from '../interfaces/TicketData';
 
@@ -25,11 +24,11 @@ const EditTicket = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (ticket && ticket.id !== null){
+    if (ticket && ticket.id !== null) {
       updateTicket(ticket.id, ticket);
       navigate('/');
     }
-    else{
+    else {
       console.error('Ticket data is undefined.');
     }
   }
@@ -57,7 +56,7 @@ const EditTicket = () => {
                 name='name'
                 value={ticket.name || ''}
                 onChange={handleTextAreaChange}
-                />
+              />
               <label htmlFor='tStatus'>Ticket Status</label>
               <select
                 name='status'
@@ -65,11 +64,11 @@ const EditTicket = () => {
                 value={ticket.status || ''}
                 onChange={handleChange}
               >
-                <option  value='Todo'>Todo</option>
-                <option  value='In Progress'>In Progress</option>
-                <option  value='Done'>Done</option>
-            </select>
-            <label htmlFor='tDescription'>Ticket Description</label>
+                <option value='Todo'>Todo</option>
+                <option value='In Progress'>In Progress</option>
+                <option value='Done'>Done</option>
+              </select>
+              <label htmlFor='tDescription'>Ticket Description</label>
               <textarea
                 id='tDescription'
                 name='description'
@@ -82,7 +81,7 @@ const EditTicket = () => {
             <div>Issues fetching ticket</div>
           )
         }
-      </div>  
+      </div>
     </>
   );
 };

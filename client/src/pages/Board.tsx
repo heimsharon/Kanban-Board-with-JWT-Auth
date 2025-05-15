@@ -1,12 +1,10 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
 import ErrorPage from './ErrorPage';
 import Swimlane from '../components/Swimlane';
 import { TicketData } from '../interfaces/TicketData';
 import { ApiMessage } from '../interfaces/ApiMessage';
-
 import auth from '../utils/auth';
 
 const boardStates = ['Todo', 'In Progress', 'Done'];
@@ -17,7 +15,7 @@ const Board = () => {
   const [loginCheck, setLoginCheck] = useState(false);
 
   const checkLogin = () => {
-    if(auth.loggedIn()) {
+    if (auth.loggedIn()) {
       setLoginCheck(true);
     }
   };
@@ -32,7 +30,7 @@ const Board = () => {
     }
   };
 
-  const deleteIndvTicket = async (ticketId: number) : Promise<ApiMessage> => {
+  const deleteIndvTicket = async (ticketId: number): Promise<ApiMessage> => {
     try {
       const data = await deleteTicket(ticketId);
       fetchTickets();
@@ -47,7 +45,7 @@ const Board = () => {
   }, []);
 
   useEffect(() => {
-    if(loginCheck) {
+    if (loginCheck) {
       fetchTickets();
     }
   }, [loginCheck]);
@@ -58,14 +56,14 @@ const Board = () => {
 
   return (
     <>
-    {
-      !loginCheck ? (
-        <div className='login-notice'>
-          <h1>
-            Login to create & view tickets
-          </h1>
-        </div>  
-      ) : (
+      {
+        !loginCheck ? (
+          <div className='login-notice'>
+            <h1>
+              Login to create & view tickets
+            </h1>
+          </div>
+        ) : (
           <div className='board'>
             <button type='button' id='create-ticket-link'>
               <Link to='/create' >New Ticket</Link>
@@ -74,10 +72,10 @@ const Board = () => {
               {boardStates.map((status) => {
                 const filteredTickets = tickets.filter(ticket => ticket.status === status);
                 return (
-                  <Swimlane 
-                    title={status} 
-                    key={status} 
-                    tickets={filteredTickets} 
+                  <Swimlane
+                    title={status}
+                    key={status}
+                    tickets={filteredTickets}
                     deleteTicket={deleteIndvTicket}
                   />
                 );
@@ -85,7 +83,7 @@ const Board = () => {
             </div>
           </div>
         )
-    }
+      }
     </>
   );
 };
