@@ -1,18 +1,26 @@
 import { Request, Response } from 'express';
 import { User } from '../models/index.js';
 import { Ticket } from '../models/index.js';
+import { Order } from 'sequelize';
 
 // GET /tickets
-export const getAllTickets = async (_req: Request, res: Response) => {
+export const getAllTickets = async (req: Request, res: Response) => {
     try {
+        const sortBy = (req.query.sortBy as string) || 'createdAt';
+        const validSortFields = ['createdAt', 'name', 'status'];
+        const order: Order = validSortFields.includes(sortBy)
+            ? ([[sortBy, 'ASC']] as Order)
+            : ([['createdAt', 'ASC']] as Order);
+
         const tickets = await Ticket.findAll({
             include: [
                 {
                     model: User,
-                    as: 'assignedUser', // This should match the alias defined in the association
-                    attributes: ['username'], // Include only the username attribute
+                    as: 'assignedUser',
+                    attributes: ['username'],
                 },
             ],
+            order,
         });
         res.json(tickets);
     } catch (error: any) {
