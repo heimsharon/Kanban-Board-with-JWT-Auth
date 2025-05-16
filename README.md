@@ -15,18 +15,19 @@ A full-stack Kanban board app with secure JWT authentication, user assignment, a
 
 ## Table of Contents
 
-- [Krazy Kanban Board](#krazy-kanban-board)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-  - [Features](#features)
-  - [Prerequisites](#prerequisites)
-  - [Technologies Used](#technologies-used)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Screenshots](#screenshots)
-    - [Kanban Board](#kanban-board)
-  - [License](#license)
-  - [Contributing](#contributing)
+-   [Krazy Kanban Board](#krazy-kanban-board)
+    -   [Table of Contents](#table-of-contents)
+    -   [Description](#description)
+    -   [Features](#features)
+    -   [Prerequisites](#prerequisites)
+    -   [Technologies Used](#technologies-used)
+    -   [Installation](#installation)
+    -   [Usage](#usage)
+    -   [Screenshots](#screenshots)
+        -   [Kanban Board](#kanban-board)
+    -   [API Documentation](#api-documentation)
+    -   [License](#license)
+    -   [Contributing](#contributing)
 
 ---
 
@@ -97,56 +98,105 @@ The app is built with a TypeScript/React frontend and an [Express](https://expre
     ```
 
 3. **Set up environment variables:**
-   Create a `.env` file in the `server` directory with:
+
+    Create a `.env` file in the `server` directory.
+    Use the appropriate values for your environment:
+
+    **For development (local):**
 
     ```env
-    DB_URL=<your-postgres-connection-string>
-    JWT_SECRET_KEY=<your-secret-key>
+    DB_URL=postgres://your_db_user:your_db_password@localhost:5432/your_db_name
+    JWT_SECRET_KEY=your_development_secret
+    CLIENT_URL=http://localhost:3000
+    NODE_ENV=development
     ```
+
+    **For production (deployed):**
+
+    ```env
+    DB_URL=postgres://your_prod_user:your_prod_password@your-prod-db-host:5432/your_prod_db
+    JWT_SECRET_KEY=your_production_secret
+    CLIENT_URL=https://your-production-site.com
+    NODE_ENV=production
+    ```
+
+    > **Note:** Never commit your real `.env` file to version control. Only commit `.env.example` with placeholder values.
 
 4. **Build the project:**
 
-    ```bash
-    npm run build
-    ```
+    - **For development:**
+      You typically do not need to build the project; use the dev servers instead.
+
+        - Start the backend and frontend in development mode (see step 6).
+
+    - **For production:**
+      Build the frontend for production and ensure the backend is ready to serve static files.
+        ```bash
+        cd client
+        npm run build
+        cd ../server
+        npm run build
+        ```
 
 5. **Seed the database (optional for local dev):**
 
     ```bash
+    cd server
     npm run seed
     ```
 
-6. **Start the development server:**
+6. **Start the server(s):**
 
-    ```bash
-    npm run start:dev
-    ```
+    - **For development:**
+      Start both the backend and frontend dev servers:
+
+        ```bash
+        # In one terminal (backend)
+        cd server
+        npm run dev
+
+        # In another terminal (frontend)
+        cd client
+        npm run dev
+        ```
+
+        - The frontend will run at [http://localhost:3000](http://localhost:3000)
+        - The backend will run at [http://localhost:3001](http://localhost:3001)
+
+    - **For production:**
+      Start only the backend server (it will serve the built frontend):
+        ```bash
+        cd server
+        npm start
+        ```
+        - The app will be available at your production URL (e.g., `https://your-production-site.com`)
 
 7. **Open your browser:**
-    ```
-    http://localhost:3000
-    ```
+
+    - **For development:**
+      Visit [http://localhost:3000](http://localhost:3000)
+
+    - **For production:**
+      Visit your deployed site URL (e.g., `https://your-production-site.com`)
 
 ---
 
 ## Usage
 
 1. **Login:**
+   Use a seeded user (e.g., `JollyGuru` / `password`) to log in.
 
-    - Use one of the seeded users (e.g., `JollyGuru` / `password`) to log in.
+2. **Create a Ticket:**
+   Click "New Ticket," fill in the details, and assign a user if desired.
 
-2. **Manage Tickets:**
+3. **Edit or Delete Tickets:**
+   Click the edit or delete icon on any ticket.
 
-    - Create, edit, and delete tickets.
-    - Assign tickets to users.
+4. **Sort and Filter:**
+   Use the dropdown menus to sort or filter tickets.
 
-3. **Sort and Filter:**
-
-    - Use the dropdowns to sort tickets by date, name, or last updated.
-    - Filter tickets by assigned user or show only unassigned tickets.
-
-4. **Logout:**
-    - Click the logout button to end your session.
+5. **Logout:**
+   Click the logout button to end your session.
 
 ---
 
@@ -155,6 +205,12 @@ The app is built with a TypeScript/React frontend and an [Express](https://expre
 ### Kanban Board
 
 ![Kanban Board Screenshot](./client/src/assets/kanban-board.jpg)
+
+---
+
+## API Documentation
+
+See [API.md](./API.md) for a full list of available endpoints and usage examples.
 
 ---
 
