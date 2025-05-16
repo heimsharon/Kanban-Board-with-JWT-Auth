@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-dotenv.config()
+dotenv.config();
 interface JwtPayload {
     username: string;
 }
@@ -16,27 +16,14 @@ export const authenticateToken = (
         const token = authHeader.split(' ')[1];
         const secretKey = process.env.JWT_SECRET_KEY || '';
 
-        try {
-            jwt.verify(token, secretKey, (err, user) => {
-                if (err) {
-                    res.sendStatus(403); // Forbidden
-                    return;
-                }
-
-                req.user = user as JwtPayload;
-                return next();
-            });
-
-        } catch (error) {
-            console.error(
-                'Error verifying token:', error);
-            res.sendStatus(500); // Internal Server Error
-            return;
-            return res.sendStatus(500); // Internal Server Error
-        }
-        res.sendStatus(401); // Unauthorized
-        return;
+        return jwt.verify(token, secretKey, (err, user) => {
+            if (err) {
+                return res.status(403).json({ message: 'Forbidden' });
+            }
+            req.user = user as JwtPayload;
+            return next();
+        });
     } else {
-        return res.sendStatus(401); // Unauthorized
+        return res.status(401).json({ message: 'Unauthorized' });
     }
 };
