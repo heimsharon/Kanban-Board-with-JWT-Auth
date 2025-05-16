@@ -3,7 +3,12 @@ const forceDatabaseRefresh = false;
 import dotenv from 'dotenv';
 dotenv.config();
 
+import { fileURLToPath } from 'url';
 import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 import express from 'express';
 import cors from 'cors';
 import routes from './routes/index.js';
