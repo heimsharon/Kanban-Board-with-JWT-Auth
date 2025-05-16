@@ -15,27 +15,27 @@ A full-stack Kanban board app with secure JWT authentication, user assignment, a
 
 ## Table of Contents
 
--   [Krazy Kanban Board](#krazy-kanban-board)
-    -   [Table of Contents](#table-of-contents)
-    -   [Description](#description)
-    -   [Features](#features)
-    -   [Prerequisites](#prerequisites)
-    -   [Technologies Used](#technologies-used)
-    -   [Installation](#installation)
-    -   [Usage](#usage)
-    -   [Screenshots](#screenshots)
-        -   [Kanban Board](#kanban-board)
-    -   [API Documentation](#api-documentation)
-    -   [License](#license)
-    -   [Contributing](#contributing)
+- [Krazy Kanban Board](#krazy-kanban-board)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Technologies Used](#technologies-used)
+  - [Installation](#installation)
+  - [API Documentation](#api-documentation)
+  - [Usage](#usage)
+  - [Screenshots](#screenshots)
+    - [Kanban Board](#kanban-board)
+  - [License](#license)
+  - [Contributing](#contributing)
 
 ---
 
 ## Description
 
 **Krazy Kanban Board** is a full-stack application that allows users to manage tasks using a Kanban board interface.
-It features secure authentication with [JSON Web Tokens (JWT)](https://jwt.io/), user-based ticket assignment, and the ability to sort and filter tickets.
-The app is built with a TypeScript/React frontend and an [Express](https://expressjs.com/)/[Sequelize](https://sequelize.org/)/[PostgreSQL](https://www.postgresql.org/) backend.
+It features secure authentication with JSON Web Tokens (JWT), user-based ticket assignment, and the ability to sort and filter tickets.
+The app is built with a TypeScript/React frontend and an Express/Sequelize/PostgreSQL backend.
 
 ---
 
@@ -181,6 +181,11 @@ The app is built with a TypeScript/React frontend and an [Express](https://expre
 
 ---
 
+## API Documentation
+
+See [API.md](./API.md) for a full list of available endpoints and usage examples.
+
+---
 ## Usage
 
 1. **Login:**
@@ -208,11 +213,6 @@ The app is built with a TypeScript/React frontend and an [Express](https://expre
 
 ---
 
-## API Documentation
-
-See [API.md](./API.md) for a full list of available endpoints and usage examples.
-
----
 
 ## License
 
