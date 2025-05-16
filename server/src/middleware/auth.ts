@@ -19,7 +19,8 @@ export const authenticateToken = (
         try {
             jwt.verify(token, secretKey, (err, user) => {
                 if (err) {
-                    return res.sendStatus(403); // Forbidden
+                    res.sendStatus(403); // Forbidden
+                    return;
                 }
 
                 req.user = user as JwtPayload;
@@ -29,10 +30,12 @@ export const authenticateToken = (
         } catch (error) {
             console.error(
                 'Error verifying token:', error);
-
+            res.sendStatus(500); // Internal Server Error
+            return;
             return res.sendStatus(500); // Internal Server Error
         }
-
+        res.sendStatus(401); // Unauthorized
+        return;
     } else {
         return res.sendStatus(401); // Unauthorized
     }
