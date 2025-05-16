@@ -1,6 +1,6 @@
+// filepath: client/src/utils/auth.ts
+// This file contains the AuthService class for handling JWT authentication
 import { jwtDecode, JwtPayload } from 'jwt-decode';
-
-// AuthService handles JWT authentication logic for the client application
 class AuthService {
     // Decode the token and return the user's profile
     getProfile(): JwtPayload | null {

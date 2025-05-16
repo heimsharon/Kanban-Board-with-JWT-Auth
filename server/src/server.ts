@@ -1,4 +1,4 @@
-// Filepath: server/src/server.ts
+// filepath: server/src/server.ts
 // This file sets up and starts the Express server, connects to the database, and serves the React client.
 
 const forceDatabaseRefresh = false; // Set to true to drop and recreate all tables on server start (useful for development/testing only)

@@ -1,4 +1,4 @@
-// Filepath: client/src/components/Swimlane.tsx
+// filepath: client/src/components/Swimlane.tsx
 // This file is used to create the swimlane component
 
 import TicketCard from './TicketCard';

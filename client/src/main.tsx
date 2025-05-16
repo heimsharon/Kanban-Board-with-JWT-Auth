@@ -1,4 +1,4 @@
-// Filepath: client/src/main.tsx
+// filepath: client/src/main.tsx
 // This file sets up the main entry point for the React application, configures routing, and renders the app.
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';

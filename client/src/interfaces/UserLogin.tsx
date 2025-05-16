@@ -1,5 +1,5 @@
-// Filepath: client/src/interfaces/UserLogin.tsx
-// This file contains  the user login and login response interfaces
+// filepath: client/src/interfaces/UserLogin.tsx
+// This file contains the user login and login response interfaces
 
 export interface UserLogin {
   username: string | null;

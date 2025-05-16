@@ -1,4 +1,4 @@
-// Filepath: server/src/models/user.ts
+// filepath: server/src/models/user.ts
 // This file defines the User model for the database using Sequelize.
 import { DataTypes, Sequelize, Model, Optional } from 'sequelize';
 import bcrypt from 'bcrypt';

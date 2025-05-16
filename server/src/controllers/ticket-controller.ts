@@ -1,4 +1,4 @@
-// Filepath: server/src/controllers/ticket-controller.ts
+// filepath: server/src/controllers/ticket-controller.ts
 // This file contains the controller functions for handling ticket-related API endpoints.
 import { Request, Response } from 'express';
 import { User } from '../models/index.js';

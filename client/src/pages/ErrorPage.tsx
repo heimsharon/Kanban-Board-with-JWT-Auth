@@ -1,4 +1,4 @@
-// Filepath: client/src/pages/ErrorPage.tsx
+// filepath: client/src/pages/ErrorPage.tsx
 // This file is default export for the ErrorPage component
 
 const ErrorPage = () => {

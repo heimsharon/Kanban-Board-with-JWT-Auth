@@ -1,4 +1,4 @@
-// Filepath: server/src/config/connections.ts
+// filepath: server/src/config/connections.ts
 // This file sets up the Sequelize connection to the PostgreSQL database using environment variables.
 
 import dotenv from 'dotenv';

@@ -1,4 +1,4 @@
-// Filepath: server/src/models/ticket.ts
+// filepath: server/src/models/ticket.ts
 // This file defines the Ticket model for the database using Sequelize.
 import { DataTypes, Sequelize, Model, Optional } from 'sequelize';
 import { User } from './user';

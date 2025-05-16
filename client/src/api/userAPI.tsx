@@ -1,4 +1,4 @@
-// Filepath: client/src/api/userAPI.tsx
+// filepath: client/src/api/userAPI.tsx
 // This file contains the API calls for user management
 import Auth from '../utils/auth';
 

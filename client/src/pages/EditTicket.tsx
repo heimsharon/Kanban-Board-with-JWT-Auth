@@ -1,4 +1,4 @@
-// Filepath: client/src/pages/EditTicket.tsx
+// filepath: client/src/pages/EditTicket.tsx
 // This file is used to create the EditTicket component
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

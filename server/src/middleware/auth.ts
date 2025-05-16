@@ -1,4 +1,4 @@
-// Filepath: server/src/middleware/auth.ts
+// filepath: server/src/middleware/auth.ts
 // This file contains middleware for authenticating JWT tokens in incoming requests.
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';

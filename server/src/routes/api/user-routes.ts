@@ -1,4 +1,4 @@
-// Filepath: server/src/routes/api/user-routes.ts
+// filepath: server/src/routes/api/user-routes.ts
 // This file defines the user-related routes for the API.
 import express from 'express';
 import {

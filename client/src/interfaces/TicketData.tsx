@@ -1,4 +1,4 @@
-// Filepath: client/src/interfaces/TicketData.tsx
+// filepath: client/src/interfaces/TicketData.tsx
 // This file contains the API call for user login
 import { UserData } from './UserData';
 

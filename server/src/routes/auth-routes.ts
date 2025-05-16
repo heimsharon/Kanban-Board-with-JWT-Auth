@@ -1,4 +1,4 @@
-// Filepath: server/src/api/auth-routes.ts
+// filepath: server/src/api/auth-routes.ts
 // This file defines the authentication routes for the application.
 import { Router, Request, Response } from 'express';
 import { User } from '../models/index.js';

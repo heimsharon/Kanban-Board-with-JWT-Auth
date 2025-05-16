@@ -1,4 +1,4 @@
-// Filepath: client/src/pages/createTicket.tsx
+// filepath: client/src/pages/createTicket.tsx
 // This file is used to create the createTicket component
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';

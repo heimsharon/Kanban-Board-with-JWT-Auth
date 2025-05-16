@@ -1,4 +1,4 @@
-// Filepath: server/src/controllers/user-controller.ts
+// filepath: server/src/controllers/user-controller.ts
 // This file contains the controller functions for handling user-related API endpoints.
 import { Request, Response } from 'express';
 import { User } from '../models/index.js';

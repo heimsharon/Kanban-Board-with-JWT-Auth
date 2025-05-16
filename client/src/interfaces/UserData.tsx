@@ -1,4 +1,4 @@
-//Filepath: client/src/interfaces/UserData.tsx
+// filepath: client/src/interfaces/UserData.tsx
 // This file contains the user data interface
 export interface UserData {
   id: number | null;

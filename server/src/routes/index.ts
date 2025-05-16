@@ -1,4 +1,4 @@
-//Filepath: server/src/routes/index.ts
+// filepath: server/src/routes/index.ts
 // This file defines the main router for the server, combining authentication and API routes.
 import { Router } from 'express';
 import authRoutes from './auth-routes.js';

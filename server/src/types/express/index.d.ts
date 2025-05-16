@@ -1,4 +1,4 @@
-// Filepath: server/src/types/express/index.d.ts
+// filepath: server/src/types/express/index.d.ts
 // This file extends the Express Request interface to include a user property for authenticated requests.
 declare namespace Express {
     interface Request {

@@ -1,4 +1,4 @@
-// Path: client/src/components/Navbar.tsx
+// filepath: client/src/components/Navbar.tsx
 // Navigation bar component for the Kanban board application
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';

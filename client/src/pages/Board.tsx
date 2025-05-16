@@ -1,4 +1,4 @@
-//Filepath: client/src/pages/Board.tsx
+// filepath: client/src/pages/Board.tsx
 // This file is used to create the board component
 import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';

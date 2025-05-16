@@ -1,4 +1,4 @@
-// Filepath: client/src/api/ticketAPI.tsx
+// filepath: client/src/api/ticketAPI.tsx
 // This file contains the API calls for ticket management
 import { TicketData } from '../interfaces/TicketData';
 import { ApiMessage } from '../interfaces/ApiMessage';

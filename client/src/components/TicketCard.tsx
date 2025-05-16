@@ -1,4 +1,4 @@
-// Filepath: client/src/components/TicketCard.tsx
+// filepath: client/src/components/TicketCard.tsx
 // This file contains the TicketCard component, which displays ticket information
 
 import { Link } from 'react-router-dom';

@@ -1,4 +1,4 @@
-// Filepath: client/src/api/authAPI.tsx
+// filepath: client/src/api/authAPI.tsx
 // Provides the API call for user authentication (login)
 import { UserLogin, LoginResponse } from '../interfaces/UserLogin';
 

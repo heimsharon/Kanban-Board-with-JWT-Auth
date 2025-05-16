@@ -1,4 +1,4 @@
-// Filepath: server/src/routes/api/ticket-routes.ts
+// filepath: server/src/routes/api/ticket-routes.ts
 // This file defines the ticket-related routes for the API.
 import express from 'express';
 import {

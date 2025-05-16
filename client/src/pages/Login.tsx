@@ -1,4 +1,4 @@
-// Filepath: client/src/pages/Login.tsx
+// filepath: client/src/pages/Login.tsx
 // This file is used to create the login component
 import { useState, FormEvent, ChangeEvent } from 'react';
 import Auth from '../utils/auth';

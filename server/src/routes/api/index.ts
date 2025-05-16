@@ -1,4 +1,4 @@
-// Filepath: server/src/routes/api/index.ts
+// filepath: server/src/routes/api/index.ts
 // This file defines the main API router for the application.
 // It combines ticket and user route modules under their respective endpoints.
 import { Router } from 'express';

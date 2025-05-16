@@ -1,4 +1,4 @@
-// Filepath: server/src/models/index.ts
+// filepath: server/src/models/index.ts
 // This file sets up the Sequelize connection to the PostgreSQL database and initializes the models.
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';

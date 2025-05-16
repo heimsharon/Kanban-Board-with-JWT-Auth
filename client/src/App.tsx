@@ -1,4 +1,4 @@
-// Filepath: client/src/App.tsx
+// filepath: client/src/App.tsx
 // This file is used to create the main App component
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar';
