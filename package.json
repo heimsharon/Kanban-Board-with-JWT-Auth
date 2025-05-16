@@ -33,6 +33,8 @@
         "wait-on": "^7.0.1"
     },
     "dependencies": {
-        "glob": "^10.3.0"
+        "glob": "^10.3.0",
+        "typescript": "^5.2.2"
+
     }
 }
