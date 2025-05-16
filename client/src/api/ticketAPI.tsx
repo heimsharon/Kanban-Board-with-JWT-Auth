@@ -2,9 +2,12 @@ import { TicketData } from '../interfaces/TicketData';
 import { ApiMessage } from '../interfaces/ApiMessage';
 import Auth from '../utils/auth';
 
-const retrieveTickets = async (sortBy = 'createdAt') => {
+const retrieveTickets = async (sortBy = 'createdAt', filterUser = 'All') => {
     try {
-        const response = await fetch(`/api/tickets?sortBy=${sortBy}`, {
+        const params = new URLSearchParams({ sortBy });
+        if (filterUser && filterUser !== 'All')
+            params.append('userId', filterUser);
+        const response = await fetch(`/api/tickets?${params.toString()}`, {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${Auth.getToken()}`,

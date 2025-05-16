@@ -1,21 +1,25 @@
 import { useEffect, useState, useLayoutEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { retrieveTickets, deleteTicket } from '../api/ticketAPI';
+import { retrieveUsers } from '../api/userAPI';
 import ErrorPage from './ErrorPage';
 import Swimlane from '../components/Swimlane';
 import { TicketData } from '../interfaces/TicketData';
 import { ApiMessage } from '../interfaces/ApiMessage';
+import { UserData } from '../interfaces/UserData';
 import auth from '../utils/auth';
 
 const boardStates = ['Todo', 'In Progress', 'Done'];
 
 const Board = () => {
     const [tickets, setTickets] = useState<TicketData[]>([]);
+    const [users, setUsers] = useState<UserData[]>([]);
     const [error, setError] = useState(false);
     const [loginCheck, setLoginCheck] = useState(false);
-    const [sortBy, setSortBy] = useState<'createdAt' | 'name' | 'status'>(
+    const [sortBy, setSortBy] = useState<'createdAt' | 'updatedAt' | 'name'>(
         'createdAt'
     );
+    const [filterUser, setFilterUser] = useState<string>('All');
 
     const checkLogin = () => {
         if (auth.loggedIn()) {
@@ -25,11 +29,20 @@ const Board = () => {
 
     const fetchTickets = async () => {
         try {
-            const data = await retrieveTickets(sortBy);
+            const data = await retrieveTickets(sortBy, filterUser);
             setTickets(data);
         } catch (err) {
             console.error('Failed to retrieve tickets:', err);
             setError(true);
+        }
+    };
+
+    const fetchUsers = async () => {
+        try {
+            const data = await retrieveUsers();
+            setUsers(data);
+        } catch (err) {
+            console.error('Failed to retrieve users:', err);
         }
     };
 
@@ -50,9 +63,10 @@ const Board = () => {
     useEffect(() => {
         if (loginCheck) {
             fetchTickets();
+            fetchUsers();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [loginCheck, sortBy]);
+    }, [loginCheck, sortBy, filterUser]);
 
     if (error) {
         return <ErrorPage />;
@@ -78,21 +92,51 @@ const Board = () => {
                                 setSortBy(
                                     e.target.value as
                                         | 'createdAt'
+                                        | 'updatedAt'
                                         | 'name'
-                                        | 'status'
                                 )
                             }
                         >
                             <option value="createdAt">Created At</option>
-                            <option value="name">Name</option>
-                            <option value="status">Status</option>
+                            <option value="updatedAt">Last Updated</option>
+                            <option value="name">Ticket Name</option>
+                        </select>
+                        <label
+                            htmlFor="filterUser"
+                            style={{ marginLeft: '1em' }}
+                        >
+                            Filter by User:{' '}
+                        </label>
+                        <select
+                            id="filterUser"
+                            value={filterUser}
+                            onChange={(e) => setFilterUser(e.target.value)}
+                        >
+                            <option value="All">All</option>
+                            <option value="unassigned">Unassigned</option>
+                            {users.map((user) => (
+                                <option key={user.id} value={String(user.id)}>
+                                    {user.username}
+                                </option>
+                            ))}
                         </select>
                     </div>
                     <div className="board-display">
                         {boardStates.map((status) => {
-                            const filteredTickets = tickets.filter(
-                                (ticket) => ticket.status === status
-                            );
+                            // Filtering by user
+                            const filteredTickets = tickets.filter((ticket) => {
+                                if (filterUser === 'All')
+                                    return ticket.status === status;
+                                if (filterUser === 'unassigned')
+                                    return (
+                                        ticket.status === status &&
+                                        !ticket.assignedUserId
+                                    );
+                                return (
+                                    ticket.status === status &&
+                                    String(ticket.assignedUserId) === filterUser
+                                );
+                            });
                             return (
                                 <Swimlane
                                     title={status}

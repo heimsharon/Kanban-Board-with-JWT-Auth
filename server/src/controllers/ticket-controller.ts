@@ -7,12 +7,24 @@ import { Order } from 'sequelize';
 export const getAllTickets = async (req: Request, res: Response) => {
     try {
         const sortBy = (req.query.sortBy as string) || 'createdAt';
-        const validSortFields = ['createdAt', 'name', 'status'];
+        const userId = req.query.userId as string | undefined;
+        const validSortFields = ['createdAt', 'updatedAt', 'name'];
         const order: Order = validSortFields.includes(sortBy)
             ? ([[sortBy, 'ASC']] as Order)
             : ([['createdAt', 'ASC']] as Order);
 
+        // Filtering by assigned user
+        let where: any = {};
+        if (userId && userId !== 'All') {
+            if (userId === 'unassigned') {
+                where.assignedUserId = null;
+            } else {
+                where.assignedUserId = userId;
+            }
+        }
+
         const tickets = await Ticket.findAll({
+            where,
             include: [
                 {
                     model: User,
