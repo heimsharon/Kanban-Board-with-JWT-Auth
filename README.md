@@ -240,7 +240,12 @@ See [API.md](./API.md) for a full list of available endpoints and usage examples
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the [MIT License](LICENSE).
+
+You are free to use, modify, and distribute this software for personal or commercial purposes, provided you include the original copyright
+and license notice in any copies or substantial portions of the software.
+
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
