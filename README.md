@@ -23,14 +23,14 @@ _A full-stack Kanban board app with secure JWT authentication, user assignment, 
     -   [Table of Contents](#table-of-contents)
     -   [Description](#description)
     -   [Features](#features)
-    -   [Prerequisites](#prerequisites)
+    -   [Screenshots](#screenshots)
+        -   [Kanban Board](#kanban-board)
     -   [Technologies Used](#technologies-used)
+    -   [Prerequisites](#prerequisites)
     -   [Quick Start](#quick-start)
     -   [Installation](#installation)
     -   [API Documentation](#api-documentation)
     -   [Usage](#usage)
-    -   [Screenshots](#screenshots)
-        -   [Kanban Board](#kanban-board)
     -   [License](#license)
     -   [Notes](#notes)
     -   [Contributing, Support, and FAQ](#contributing-support-and-faq)
@@ -60,12 +60,11 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
 ---
 
-## Prerequisites
+## Screenshots
 
--   [Node.js](https://nodejs.org/) (v18 or higher)
--   [npm](https://www.npmjs.com/) (comes with Node.js)
--   [PostgreSQL](https://www.postgresql.org/) (local or cloud, e.g. Render)
--   A GitHub account (for cloning and contributing)
+### Kanban Board
+
+![Kanban Board Screenshot](./client/src/assets/kanban-board.jpg)
 
 ---
 
@@ -90,10 +89,19 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
 ---
 
+## Prerequisites
+
+-   [Node.js](https://nodejs.org/) (v18 or higher)
+-   [npm](https://www.npmjs.com/) (comes with Node.js)
+-   [PostgreSQL](https://www.postgresql.org/) (local or cloud, e.g. Render)
+-   A GitHub account (for cloning and contributing)
+
+---
+
 ## Quick Start
 
-> You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
-> On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
+You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
+On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
 
 ---
 
@@ -228,14 +236,6 @@ See [API.md](./API.md) for a full list of available endpoints and usage examples
 
 5. **Logout:**
    Click the logout button to end your session.
-
----
-
-## Screenshots
-
-### Kanban Board
-
-![Kanban Board Screenshot](./client/src/assets/kanban-board.jpg)
 
 ---
 
