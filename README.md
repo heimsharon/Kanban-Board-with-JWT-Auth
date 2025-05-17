@@ -1,9 +1,12 @@
 # Krazy Kanban Board
 
-A full-stack Kanban board app with secure JWT authentication, user assignment, and sortable/filterable tickets.
+_A full-stack Kanban board app with secure JWT authentication, user assignment, and sortable/filterable tickets._
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Render Deploy](https://img.shields.io/badge/Deployed-Render-blue)
+![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen)
+![React](https://img.shields.io/badge/React-18+-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
 
 **Live Demo:** [Krazy Kanban Board on Render](https://kanban-board-with-jwt-auth.onrender.com)
 
@@ -15,19 +18,23 @@ A full-stack Kanban board app with secure JWT authentication, user assignment, a
 
 ## Table of Contents
 
-- [Krazy Kanban Board](#krazy-kanban-board)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-  - [Features](#features)
-  - [Prerequisites](#prerequisites)
-  - [Technologies Used](#technologies-used)
-  - [Installation](#installation)
-  - [API Documentation](#api-documentation)
-  - [Usage](#usage)
-  - [Screenshots](#screenshots)
-    - [Kanban Board](#kanban-board)
-  - [License](#license)
-  - [Contributing](#contributing)
+-   [Krazy Kanban Board](#krazy-kanban-board)
+    -   [Table of Contents](#table-of-contents)
+    -   [Description](#description)
+    -   [Features](#features)
+    -   [Prerequisites](#prerequisites)
+    -   [Technologies Used](#technologies-used)
+    -   [Quick Start](#quick-start)
+    -   [Installation](#installation)
+    -   [API Documentation](#api-documentation)
+    -   [Usage](#usage)
+    -   [Screenshots](#screenshots)
+        -   [Kanban Board](#kanban-board)
+    -   [License](#license)
+    -   [Notes](#notes)
+    -   [Contributing, Support, and FAQ](#contributing-support-and-faq)
+    -   [Acknowledgments](#acknowledgments)
+    -   [Author](#author)
 
 ---
 
@@ -82,6 +89,13 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
 ---
 
+## Quick Start
+
+> You can get the code by either cloning this repository using Git, or downloading it as a ZIP file from GitHub (click the green "Code" button, then "Download ZIP").
+> On GitHub, you can also browse the code, view commit history, open issues, and submit pull requests.
+
+---
+
 ## Installation
 
 1. **Clone the repository:**
@@ -95,6 +109,16 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
     ```bash
     npm run install
+    ```
+
+    This command will install dependencies for both the `client` and `server` folders at once.
+    Alternatively, you can install them separately:
+
+    ```bash
+    cd client
+    npm install
+    cd ../server
+    npm install
     ```
 
 3. **Set up environment variables:**
@@ -186,6 +210,7 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 See [API.md](./API.md) for a full list of available endpoints and usage examples.
 
 ---
+
 ## Usage
 
 1. **Login:**
@@ -213,15 +238,51 @@ See [API.md](./API.md) for a full list of available endpoints and usage examples
 
 ---
 
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-## Contributing
+## Notes
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+-   The codebase is heavily commented for educational purposes and future reference.
+-   The GitHub repository allows you to download, fork, or contribute to the project as needed.
 
 ---
+
+## Contributing, Support, and FAQ
+
+-   **Contributions:** Pull requests are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
+-   **Support:** If you encounter any issues or have suggestions, please open an issue on GitHub.
+-   **FAQ:**
+    -   _How do I run the program?_
+        See the [Installation](#installation) and [Usage](#usage) sections above.
+    -   _Can I use this for my own project?_
+        Yes, this project is MIT licensed. See the [License](#license) section.
+    -   _I'm having trouble connecting to the database or running the app!_
+        -   Double-check your `.env` file values, especially `DB_URL` and `JWT_SECRET_KEY`.
+        -   Make sure PostgreSQL is running and accessible.
+        -   Try running `npm install` in both `client` and `server` if you see missing module errors.
+        -   If you need to reset the database, you can re-run the seed command:
+            ```bash
+            cd server
+            npm run seed
+            ```
+
+---
+
+## Acknowledgments
+
+Portions of this project were developed using starter code provided by [edX Boot Camps LLC](https://bootcamp.edx.org/) for educational purposes.
+
+---
+
+## Author
+
+Created by Sharon Heim.
+For questions or suggestions, please visit my [GitHub profile](https://github.com/heimsharon).
+
+---
+
+© 2025 Krazy Kanban Board Project
