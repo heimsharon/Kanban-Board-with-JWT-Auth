@@ -7,6 +7,7 @@ _A full-stack Kanban board app with secure JWT authentication, user assignment, 
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-brightgreen)
 ![React](https://img.shields.io/badge/React-18+-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+![Student Project](https://img.shields.io/badge/student_project-s_heim-yellow)
 
 **Live Demo:** [Krazy Kanban Board on Render](https://kanban-board-with-jwt-auth.onrender.com)
 
@@ -240,12 +241,12 @@ See [API.md](./API.md) for a full list of available endpoints and usage examples
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE.txt).
 
 You are free to use, modify, and distribute this software for personal or commercial purposes, provided you include the original copyright
 and license notice in any copies or substantial portions of the software.
 
-See the [LICENSE](LICENSE) file for full details.
+See the [MIT License text](https://opensource.org/licenses/MIT) for full details.
 
 ---
 
