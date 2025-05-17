@@ -24,7 +24,7 @@
         "kanban",
         "typescript"
     ],
-    "author": "",
+    "author": "Sharon Heim",
     "license": "MIT",
     "dependencies": {
         "bcrypt": "^5.1.0",
