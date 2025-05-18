@@ -19,23 +19,23 @@ _A full-stack Kanban board app with secure JWT authentication, user assignment, 
 
 ## Table of Contents
 
--   [Krazy Kanban Board](#krazy-kanban-board)
-    -   [Table of Contents](#table-of-contents)
-    -   [Description](#description)
-    -   [Features](#features)
-    -   [Screenshots](#screenshots)
-        -   [Kanban Board](#kanban-board)
-    -   [Technologies Used](#technologies-used)
-    -   [Prerequisites](#prerequisites)
-    -   [Quick Start](#quick-start)
-    -   [Installation](#installation)
-    -   [API Documentation](#api-documentation)
-    -   [Usage](#usage)
-    -   [License](#license)
-    -   [Notes](#notes)
-    -   [Contributing, Support, and FAQ](#contributing-support-and-faq)
-    -   [Acknowledgments](#acknowledgments)
-    -   [Author](#author)
+- [Krazy Kanban Board](#krazy-kanban-board)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Features](#features)
+  - [Screenshots](#screenshots)
+    - [Kanban Board](#kanban-board)
+  - [Technologies Used](#technologies-used)
+  - [Prerequisites](#prerequisites)
+  - [Quick Start](#quick-start)
+  - [Installation](#installation)
+  - [API Documentation](#api-documentation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Notes](#notes)
+  - [Contributing, Support, and FAQ](#contributing-support-and-faq)
+  - [Acknowledgments](#acknowledgments)
+  - [Author](#author)
 
 ---
 
@@ -49,14 +49,14 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
 ## Features
 
--   Secure login and logout with JWT authentication
--   Kanban board with columns for Todo, In Progress, and Done
--   Create, edit, and delete tickets
--   Assign tickets to users
--   Sort tickets by created date, last updated, or ticket name
--   Filter tickets by assigned user or unassigned
--   Timestamps for ticket creation and last update
--   Responsive design for desktop and mobile
+- Secure login and logout with JWT authentication
+- Kanban board with columns for Todo, In Progress, and Done
+- Create, edit, and delete tickets
+- Assign tickets to users
+- Sort tickets by created date, last updated, or ticket name
+- Filter tickets by assigned user or unassigned
+- Timestamps for ticket creation and last update
+- Responsive design for desktop and mobile
 
 ---
 
@@ -72,29 +72,29 @@ The app is built with a TypeScript/React frontend and an Express/Sequelize/Postg
 
 **Frontend:**
 
--   [React](https://reactjs.org/)
--   [React Router](https://reactrouter.com/)
--   [Vite](https://vitejs.dev/)
--   [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 **Backend:**
 
--   [Node.js](https://nodejs.org/)
--   [Express.js](https://expressjs.com/)
--   [Sequelize](https://sequelize.org/)
--   [PostgreSQL](https://www.postgresql.org/)
--   [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
--   [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
--   [dotenv](https://github.com/motdotla/dotenv)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+- [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken)
+- [dotenv](https://github.com/motdotla/dotenv)
 
 ---
 
 ## Prerequisites
 
--   [Node.js](https://nodejs.org/) (v18 or higher)
--   [npm](https://www.npmjs.com/) (comes with Node.js)
--   [PostgreSQL](https://www.postgresql.org/) (local or cloud, e.g. Render)
--   A GitHub account (for cloning and contributing)
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [PostgreSQL](https://www.postgresql.org/) (local or cloud, e.g. Render)
+- A GitHub account (for cloning and contributing)
 
 ---
 
@@ -164,6 +164,7 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
 
     - **For production:**
       Build the frontend for production and ensure the backend is ready to serve static files.
+
         ```bash
         cd client
         npm run build
@@ -198,10 +199,12 @@ On GitHub, you can also browse the code, view commit history, open issues, and s
 
     - **For production:**
       Start only the backend server (it will serve the built frontend):
+
         ```bash
         cd server
         npm start
         ```
+
         - The app will be available at your production URL (e.g., `https://your-production-site.com`)
 
 7. **Open your browser:**
@@ -252,29 +255,30 @@ See the [MIT License text](https://opensource.org/licenses/MIT) for full details
 
 ## Notes
 
--   The codebase is heavily commented for educational purposes and future reference.
--   The GitHub repository allows you to download, fork, or contribute to the project as needed.
+- The codebase is heavily commented for educational purposes and future reference.
+- The GitHub repository allows you to download, fork, or contribute to the project as needed.
 
 ---
 
 ## Contributing, Support, and FAQ
 
--   **Contributions:** Pull requests are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
--   **Support:** If you encounter any issues or have suggestions, please open an issue on GitHub.
--   **FAQ:**
-    -   _How do I run the program?_
+- **Contributions:** Pull requests are welcome! Please open an issue or submit a pull request for improvements or bug fixes.
+- **Support:** If you encounter any issues or have suggestions, please open an issue on GitHub.
+- **FAQ:**
+  - _How do I run the program?_
         See the [Installation](#installation) and [Usage](#usage) sections above.
-    -   _Can I use this for my own project?_
+  - _Can I use this for my own project?_
         Yes, this project is MIT licensed. See the [License](#license) section.
-    -   _I'm having trouble connecting to the database or running the app!_
-        -   Double-check your `.env` file values, especially `DB_URL` and `JWT_SECRET_KEY`.
-        -   Make sure PostgreSQL is running and accessible.
-        -   Try running `npm install` in both `client` and `server` if you see missing module errors.
-        -   If you need to reset the database, you can re-run the seed command:
-            ```bash
+  - _I'm having trouble connecting to the database or running the app!_
+    - Double-check your `.env` file values, especially `DB_URL` and `JWT_SECRET_KEY`.
+    - Make sure PostgreSQL is running and accessible.
+    - Try running `npm install` in both `client` and `server` if you see missing module errors.
+    - If you need to reset the database, you can re-run the seed command:
+
+         ```bash
             cd server
             npm run seed
-            ```
+        ```
 
 ---
 
